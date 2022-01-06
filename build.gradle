@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.github.KKghub'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'org.apache.kafka:kafka-clients:3.0.0'
+    implementation 'org.slf4j:slf4j-simple:1.7.32'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    // `gradlew run` will run the following class
+    mainClassName = "com.github.KKghub.kafka.tutorial1.ConsumerDemoWithThread"
+}
